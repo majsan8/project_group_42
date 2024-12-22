@@ -1,9 +1,49 @@
 @layer card, form, thumbnail, accordion, detailed-list, call-to-action, subgrid;
 
 
-@layer card {
-  .card {
+@layer card { 
+  .card { 
+    display: grid; 
+    grid-template-rows: auto 1fr auto;
 
+    .header {
+      background-color: inherit;
+      position: relative;
+      padding: 3rem 1.5rem;
+      font-size: 150%;
+      padding-bottom: 1.5rem;
+
+      .p {
+        font-size: 60%;
+      }
+
+      .figure {
+        background-color: inherit;
+        position: absolute;
+        right: 14%;
+        bottom: 0;
+        translate: 50% 50%;
+        padding: 0.75rem;
+        border-radius: 100vw; 
+        border: 0.2rem;
+        border-color: solid white; 
+      }
+    }
+
+    .content {
+      padding-top: 3rem;
+      padding-bottom: 0.75rem;
+    
+      .p {
+        padding-bottom: 1rem;
+        padding-inline-start: 1.5rem;
+        padding-inline-end: 3.5rem;
+        line-height: 1.5; 
+      }
+    }
+    .button {
+      text-align: right;
+      }
   }
 }
 
