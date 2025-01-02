@@ -56,20 +56,42 @@
 
 @layer accordion {
   .accordion {
+    
     .block{
-      border-top-left-radius: 1rem;
-      border-top-right-radius: 1rem;
-      background-color: hsl(208, 80%, 30%)
+      color: black;
+      background-color: hsl(212, 78%, 81%);
+      border: solid 2px;
+      border-radius: 1rem;
+      border-color: #648cb4;
+      margin: 1rem 0rem;
+    }
+    .block[open]{
+      border: solid 3px;
+      border-radius: 1rem;
+      border-color: hsl(var(--hue-1), 60%, 40%);
+
+      color: hsl(216, 100%, 98%);
+      background-color: hsl(var(--hue-1), 60%, 40%);
+/*       background-color: hsl(208, 60%, 40%); */
     }
     .content{
-      background-color: white;
       padding: 2rem;
-      margin-inline: 2px;
+      border-bottom-right-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+      line-height: 1.5;
+      font-size: 1.8rem;
+      text-align: center;
+      background-color: hsl(210, 100%, 96%);
+      color: black;
+
+      .text{
+        padding-left: 1rem;
+        text-align: left;
+      }
     }
     .heading{
       padding: 2rem;
       font-size: 2rem;
-      color: white;
     }
   }
 }
@@ -77,28 +99,59 @@
 @layer detailed-list {
   .detailed-list {  
     padding: 1rem;
-    border-color: rgb(9, 53, 92);
+    border-color: hsl(208, 82%, 20%);
 
    container-type: inline-size;
    container-name: detailed-list;
 
+
+   
    .dl{
     display: grid;
+    font-size: 1.6rem;
+    text-align: left;
+    .dt{
+      color: hsl(var(--hue-1), 70%, 30%);
+      font-weight:900;
+      padding: 0rem 1rem 0rem 1rem;
+      margin-top: 1rem;
+      border-left: solid black 1px;
+     }
+     .dd{
+      padding: 0rem 1rem 1rem 1rem;
+      border-left: solid black 1px;
+     }
 
-    @container detailed-list (width > 60ch){
-      grid-template-columns: repeat(2, 1fr);
+    @container detailed-list (width > 50ch){
+      grid-template-columns: 5fr 7fr;
+
+      font-size: 1.7rem;
+      .dt{
+        border: 0px;
+        padding-right: 2rem;
+        text-align:right;
+        font-weight: bold;
+      }
+      .dd{
+        margin-top: 1rem;
+      }
     }
-   }
-   .dt{
-    color: hsl(var(--hue-1), 70%, 30%);
-    font-weight:700;
    }
   }
 }
 
 @layer call-to-action {
   .cta {
+    font-size: 1.4rem;
 
+    background-color: hsl(var(--hue-1), 60%, 40%);
+    color: hsl(216, 100%, 98%);
+    padding: 2rem;
+    border: 2px solid;
+    border-radius: 1rem;
+    border-color: hsl(208, 82%, 20%);
+
+    margin: 2rem;
   }
 }
 
