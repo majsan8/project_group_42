@@ -55,13 +55,43 @@
 
 @layer accordion {
   .accordion {
-
+    .block{
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      background-color: hsl(208, 80%, 30%)
+    }
+    .content{
+      background-color: white;
+      padding: 2rem;
+      margin-inline: 2px;
+    }
+    .heading{
+      padding: 2rem;
+      font-size: 2rem;
+      color: white;
+    }
   }
 }
 
 @layer detailed-list {
-  .detailed-list {
-   
+  .detailed-list {  
+    padding: 1rem;
+    border-color: rgb(9, 53, 92);
+
+   container-type: inline-size;
+   container-name: detailed-list;
+
+   .dl{
+    display: grid;
+
+    @container detailed-list (width > 60ch){
+      grid-template-columns: repeat(2, 1fr);
+    }
+   }
+   .dt{
+    color: hsl(var(--hue-1), 70%, 30%);
+    font-weight:700;
+   }
   }
 }
 
