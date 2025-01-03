@@ -155,10 +155,133 @@
   }
 }
 
-@layer form {
-  
-}
-
 @layer subgrid {
- 
+  .container {
+    max-width: 1280px;
+    width: 100%;
+    padding: 0 1rem;
+    container-type: inline-size;
+    container-name: medium-screen;
+  }
+
+  .subgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas: 
+    "a a"
+    "b b"
+    "c c"
+    "d d"
+    "d d";
+    gap: 1rem;
+  }
+  .box.a{
+    grid-area: a;
+  }
+  .box.b{
+    grid-area: b;
+  }
+  .box.c{
+    grid-area: c;
+  }
+  .box.d {
+    grid-area: d;
+    grid-template-areas: 
+    "e f"
+    "g h";
+  }
+  .box.e{
+    grid-area: e;
+  }
+  .box.f{
+    grid-area: f;
+  }
+  .box.g{
+    grid-area: g;
+  }
+  .box.h{
+    grid-area: h;
+  }
+    .box {
+      background-color:hsl(var(--hue-1), 60%, 20%);
+      color: var(--white);
+      padding: 1.5rem 0rem 7rem 1rem;
+      border-radius: 1rem;
+      display: flex;
+    }
+
+    .d {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-template-rows: subgrid;
+      gap: 1rem;
+      background-color:hsl(var(--hue-1), 60%, 20%);
+      padding: 1rem;
+      border-radius: 1rem;
+
+      height: calc(8.5rem * 2 + 4rem);
+    }
+    .box.e,
+    .box.f,
+    .box.g,
+    .box.h {
+      background-color:hsl(var(--hue-1), 50%, 80%);
+      color: var(--black);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      display: flex;
+      font-size: 1.4rem;
+    }
+
+
+    @container medium-screen (min-width:744px) {
+      .h2{
+        margin-left: 3rem;
+      }
+      .subgrid{
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+      .subgrid{
+        grid-template-columns: repeat(8,1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        "a a a a b b b b"
+        "c c c c c c c c" 
+        "d d d d d d d d";
+      }
+      .box.d{
+        grid-area: d;
+        height: 10.5rem;
+        grid-template-areas: 
+        "e e f g h h h h";
+      }
+
+    }
+    @container bigger-screen (min-width: 996px){
+      .h2{
+        margin-left: 7rem;
+      }
+      .subgrid{
+        padding-left: 7rem;
+        padding-right: 7rem;
+      }
+      .subgrid{
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas: 
+        "a a a a a a a a b b b b"
+        "c c c c c d d d d d d d" 
+        "c c c c c d d d d d d d";
+      }
+
+      .box.d{
+        grid-area: d;
+        grid-template-columns: repeat(12,1fr);
+        grid-template-areas: 
+        "e e e e e f f f f f f f"
+        "e e e e e g g g g h h h";
+      }
+    }
 }
