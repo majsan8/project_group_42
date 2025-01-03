@@ -51,8 +51,6 @@
 
 @layer thumbnail {
   .thumbnail{
-    height: 100%;
-    width: 100%;
     border: 4px solid hsl(var(--hue-1), 20%, 20%);
     overflow: hidden;
     border-radius: 13px;
@@ -72,8 +70,8 @@
     text-align: right;
     color: hsl(var(--hue-1), 20%, 70%); 
     font-size: 14px;
-    }
-
+    font-style: italic;
+    } 
   }
 
   .thumbnail-image{
@@ -83,13 +81,12 @@
   display: block;
   border-radius: 8px;
   }
+
   .thumbnail-link{
     display: none;
   }
-  @media (min-width: 392px) and (max-width: 767px) {
-    .gallery .thumbnail .thumbnail-header {
 
-    }
+  @media (min-width: 392px) and (max-width: 767px) {
 
     .gallery .thumbnail .thumbnail-name {
       color: hsl(var(--hue-1), 20%, 70%);
@@ -97,8 +94,9 @@
       font-size: 20px;
       font-weight: lighter;
       padding-top: 0.4rem;
-      padding-left: 0.4rem;
+      padding-left: 0.4rem; 
     }
+
 
     .gallery .thumbnail .thumbnail-email {
       text-align: right;
@@ -108,7 +106,7 @@
       padding-bottom: 0.4rem;
       padding-right: 0.5rem;
       font-weight: lighter;
-      color: rgb(253, 249, 249);
+      color: white;
     }
   }
   @media (min-width:768px) {
@@ -125,25 +123,37 @@
       display: none;
 
     }
-    .thumbnail-content{
-
-    }
-    .thumbnail-picture{
-
-    }
-    .thumbnail-image{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    border-radius: 8px;
-
-    }
     .thumbnail-link{
       display: none;
 
     }
+    .thumbnail-image{
+    display: block;
+    border-radius: 8px;
+    }
+    .thumbnail:hover{
+      display: inline;
+      transform: scale(1.1);
 
+      .thumbnail-header{
+        display: inline;
+        position: absolute;
+        top: 80%;
+        left: 2%;
+        z-index: 1;
+
+      }
+      .thumbnail-name{
+        display: block;
+
+       }
+       .thumbnail-email{
+         display: flex;
+         position: relative;
+
+         left: 13rem;
+       }
+    }
   }
 }
 
@@ -315,15 +325,39 @@
       }
     }
 
-    @container medium-screen (min-width: 768px){
+    @container medium-screen (min-width: 744px){
       .fieldset{
-        margin-left: 6rem;
-        margin-right: 6rem;
+        margin-left: 4rem;
+        margin-right: 4rem;
       }
       .heading{
-        margin-left: 6rem;
+        margin-left: 4rem;
+        font-size: 6.4rem;
       }
-    }
+      .group{
+        margin-bottom: 2.5rem;
+        font-size: 1.6rem;
+      }
+      .label{
+        font-size: 2rem;
+      }
+      .legend{
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      .buttons{
+        margin-right: 4rem;
+        margin-left: 4rem;
+        .button {
+          background-color:hsl(var(--hue-1), 60%, 40%);
+          color: var(--white);
+          align-items: center;
+          padding: 1.4rem 2.1rem 1.4rem 2.1rem;
+          border-radius: 1rem;
+          font-size: 2.2rem;
+        }
+      }
+    } 
     
     @container bigger-screen (min-width: 1091px) {
       .fieldset{
