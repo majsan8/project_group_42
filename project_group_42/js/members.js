@@ -1,41 +1,41 @@
 function memberThumbnail(member) {
   const thumbnail = `
-  <div class="col-12 ???" id="${member.eid}">
-    <header class="???">
-      <h4 class="???">${member.first_name} ${member.last_name}</h4>
-      <p class="???">
+  <div class="col-12 col-xs-6 col-md-4 col-lg-3 thumbnail" id="${member.eid}">
+    <header class="thumbnail-header">
+      <h4 class="thumbnail-name">${member.first_name} ${member.last_name}</h4>
+      <p class="thumbnail-email">
         <a href="mailto:${member.mail}@du.se" title="Mail ${member.first_name} ${member.last_name}">${member.mail}@du.se</a>
       </p>
-    </header>           
-    <div class="???">
-      <picture class="???"> 
+    </header>
+    <div class="thumbnail-content">
+      <picture class="thumbnail-picture"> 
         <source
           type="image/webp"
-          srcset="./img/informative/member/${member.id}/webp/${member.id}_256.webp ???,
-                  ./img/informative/member/${member.id}/webp/${member.id}_384.webp ???,
-                  ./img/informative/member/${member.id}/webp/${member.id}_512.webp ???"
-          sizes="(min-width: 996px) ???,
-                 (min-width: 768px) ???,
-                 (min-width: 480px) ???,
-                                    ???">
+          srcset="./img/informative/member/${member.id}/webp/${member.id}_256.webp 256w,
+                  ./img/informative/member/${member.id}/webp/${member.id}_384.webp 384w,
+                  ./img/informative/member/${member.id}/webp/${member.id}_512.webp 512w"
+          sizes="(min-width: 996px) calc((100vw - 3 * 16px) / 4),
+                 (min-width: 768px) calc((100vw - 2 * 16px) / 3),
+                 (min-width: 480px) calc((100vw - 1 * 16px) / 2),
+                                    100vw"> 
         <source
           type="image/jpg"
-          srcset="./img/informative/member/${member.id}/jpg/${member.id}_256.jpg ???,
-                  ./img/informative/member/${member.id}/jpg/${member.id}_384.jpg ???,
-                  ./img/informative/member/${member.id}/jpg/${member.id}_512.jpg ???"
-          sizes="(min-width: 996px) ???,
-                 (min-width: 768px) ???,
-                 (min-width: 480px) ???,
-                                    ???">
+          srcset="./img/informative/member/${member.id}/jpg/${member.id}_256.jpg 256,
+                  ./img/informative/member/${member.id}/jpg/${member.id}_384.jpg 384,
+                  ./img/informative/member/${member.id}/jpg/${member.id}_512.jpg 512"
+          sizes="(min-width: 996px) calc((100vw - 3 * 16px) / 4),
+                 (min-width: 768px) calc((100vw - 2 * 16px) / 3),
+                 (min-width: 480px) calc((100vw - 1 * 16px) / 2),
+                                    100vw">
         <img 
-          class="???"
+          class="thumbnail-image"
           src="./img/informative/member/${member.id}/jpg/${member.id}_512.jpg" 
           width="512"
           height="512"
           alt="${member.alt}"
           itemprop="image">
       </picture>
-      <a class="???" href="./account.html" title="Link to ${member.first_name} ${member.last_name} profile">Go to profile</a>
+      <a class="thumbnail-link" href="./account.html" title="Link to ${member.first_name} ${member.last_name} profile">Go to profile</a>
     </div>
   </div>
   `;
