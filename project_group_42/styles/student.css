@@ -59,10 +59,10 @@
     
     .block{
       color: black;
-      background-color: hsl(212, 78%, 81%);
-      border: solid 2px;
+      background-color: hsl(var(--hue-1), 70%, 80%);
+      border: solid 1px;
       border-radius: 1rem;
-      border-color: #648cb4;
+      border-color: hsl(var(--hue-1), 60%, 40%);
       margin: 1rem 0rem;
     }
     .block[open]{
@@ -70,9 +70,8 @@
       border-radius: 1rem;
       border-color: hsl(var(--hue-1), 60%, 40%);
 
-      color: hsl(216, 100%, 98%);
+      color: var(--white);
       background-color: hsl(var(--hue-1), 60%, 40%);
-/*       background-color: hsl(208, 60%, 40%); */
     }
     .content{
       padding: 2rem;
@@ -99,7 +98,7 @@
 @layer detailed-list {
   .detailed-list {  
     padding: 1rem;
-    border-color: hsl(208, 82%, 20%);
+    border-color: hsl(var(--hue-1), 70%, 30%);
 
    container-type: inline-size;
    container-name: detailed-list;
@@ -122,7 +121,7 @@
       border-left: solid black 1px;
      }
 
-    @container detailed-list (width > 50ch){
+    @container detailed-list (width > 60ch){
       grid-template-columns: 5fr 7fr;
 
       font-size: 1.7rem;
@@ -142,27 +141,23 @@
 
 @layer call-to-action {
   .cta {
-    font-size: 1.4rem;
-
+    font-size: 1.6rem;
+    font-weight: bold;
     background-color: hsl(var(--hue-1), 60%, 40%);
-    color: hsl(216, 100%, 98%);
+    color: var(--white);
     padding: 2rem;
     border: 2px solid;
     border-radius: 1rem;
-    border-color: hsl(208, 82%, 20%);
+    background-color: hsl(var(--hue-1), 60%, 40%);
 
     margin: 2rem;
   }
 }
 
 @layer form {
-  .form {
-    
-  }
+  
 }
 
 @layer subgrid {
-  .subgrid {
-  
-  }
+ 
 }
