@@ -155,6 +155,116 @@
   }
 }
 
+@layer form {
+  .main {
+    display: grid;
+    grid-template-columns: 1fr;
+    container-type: inline-size;
+    container-name: bigger-screen;
+
+    .heading {
+      font-size: 450%;
+      padding-bottom: 4rem;
+    }
+    .help {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+    .fieldset {
+      display: block;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    .group {
+      display: block;
+      margin-bottom: 4rem;
+      margin-top: 1rem;
+      font-size: 2rem;
+    }
+    .select,
+    .input {
+      background-color: white;
+      border: solid hsl(var(--hue-1), 60%, 30%);
+      border-width: 0.1rem;
+      border-radius: 1rem;
+      display: flex;
+      padding: 1rem;
+      width: 100%;
+      font-size: 120%;
+      line-height: 1.5;
+      margin-top: 1rem;
+    }
+    .legend {
+      color:hsl(var(--hue-1), 60%, 30%);
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+    }
+    .label {
+      color:hsl(var(--hue-1), 60%, 30%);
+      font-weight: bold;
+      font-size: 2rem;
+    }
+    .buttons {
+      text-align: right;
+    }
+    .button {
+      background-color:hsl(var(--hue-1), 60%, 40%);
+      color: var(--white);
+      align-items: center;
+      padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+      border-radius: 1rem;
+      margin-left: 2rem;
+      margin-top: 2rem;
+      font-size: 2.5rem;
+    }
+
+    @container bigger-screen (min-width: 910px) {
+      .fieldset{
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 2rem; 
+        margin-bottom: 4rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
+      .select, .input{
+        grid-column: span 2;
+      }
+      .group{
+        margin: 0;
+        font-size: 1.5rem;
+      }
+      .label{
+        font-size: 2rem;
+      }
+      .legend{
+        font-size: 3rem;
+      }
+      .button {
+        background-color:hsl(var(--hue-1), 60%, 40%);
+        color: var(--white);
+        align-items: center;
+        padding: 1.3rem 2rem 1.3rem 2rem;
+        border-radius: 1rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-top: 2rem;
+        font-size: 2rem;
+      }
+      .heading{
+        font-size: 350%;
+        margin-left: 2rem;
+      }
+    }
+  }
+}
+
 @layer subgrid {
   .container {
     max-width: 1280px;
