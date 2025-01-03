@@ -285,7 +285,6 @@
       border: solid hsl(var(--hue-1), 60%, 30%);
       border-width: 0.1rem;
       border-radius: 1rem;
-      display: flex;
       padding: 1rem;
       width: 100%;
       font-size: 120%;
@@ -316,15 +315,24 @@
       }
     }
 
-
-    @container bigger-screen (min-width: 910px) {
+    @container medium-screen (min-width: 768px){
+      .fieldset{
+        margin-left: 6rem;
+        margin-right: 6rem;
+      }
+      .heading{
+        margin-left: 6rem;
+      }
+    }
+    
+    @container bigger-screen (min-width: 1091px) {
       .fieldset{
         display: grid; 
         grid-template-columns: 1fr 1fr; 
         gap: 2rem; 
         margin-bottom: 4rem;
-        margin-left: 2rem;
-        margin-right: 2rem;
+        margin-left: 8rem;
+        margin-right: 8rem;
       }
       .select, .input{
         grid-column: span 2;
@@ -340,14 +348,16 @@
         font-size: 3rem;
       }
       .buttons{
+        margin-left: 8rem;
+        margin-right: 8rem;
         .button {
           background-color:hsl(var(--hue-1), 60%, 40%);
           color: var(--white);
           align-items: center;
           padding: 1.3rem 2rem 1.3rem 2rem;
           border-radius: 1rem;
-          margin-left: 2rem;
-          margin-right: 2rem;
+          margin-left: 1rem;
+          margin-right: 1rem;
           margin-top: 2rem;
           font-size: 2rem;
         }
