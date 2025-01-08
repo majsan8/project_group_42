@@ -165,7 +165,7 @@
       background-color: hsl(var(--hue-1), 70%, 80%);
       border: solid 1px;
       border-radius: 1rem;
-      border-color: hsl(var(--hue-1), 60%, 40%);
+      border-color: hsl(var(--hue-1), 60%, 60%);
       margin: 1rem 0rem;
     }
     .block[open]{
